@@ -1,4 +1,8 @@
-FROM golang:1.7
+FROM golang:1.17.7-alpine as builder
+RUN apk add --no-cache ca-certificates git
+RUN apk add build-base
+
+
 
 COPY . /go/src/github.com/microservices-demo/catalogue
 WORKDIR /go/src/github.com/microservices-demo/catalogue
